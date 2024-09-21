@@ -16,7 +16,7 @@ public class Pila<T> {
 	}
 	/**
 	 * metodo booleano que comprueba si la pila esta vacia
-	 * @return
+	 * @return retorna true si esta vacia o false si contiene elementos 
 	 */
 	public boolean isEmpty() {
 		if(this.pila.isEmpty())
@@ -34,14 +34,14 @@ public class Pila<T> {
 	}
 	/**
 	 * Metodo que devuelve cuantos elementos hay en la  pila
-	 * @return
+	 * @return retorna el tamaño de la pila 
 	 */
 	public int size() {
 		return this.pila.size();
 	}
 	/**
 	 * metodo que retorna el ultimo elemento de la pila y lo elimina
-	 * @return
+	 * @return 
 	 */
 	public T pop() throws Exception {
 		if(this.isEmpty())
@@ -63,11 +63,15 @@ public class Pila<T> {
 			
 	}
 	/**
-	 * metodo que retorna todos elmentos de la pila 
+	 * metodo toString  que retorna todos elmentos de la pila 
 	 */
 	public String toString() {
 		return pila.toString();
 	}
+	/**
+	 * metodo que retorna todos los elementos de la pila 
+	 * @return
+	 */
 	public ArrayList<T> elementosPila() {
 		return this.pila;
 	}
