@@ -43,29 +43,33 @@ public class Pila<T> {
 	 * metodo que retorna el ultimo elemento de la pila y lo elimina
 	 * @return
 	 */
-	public T pop() {
-		if(!this.isEmpty())
-			return this.pila.remove(this.pila.size()-1);
+	public T pop() throws Exception {
+		if(this.isEmpty())
+			throw new Exception("Error: Pila vacia");
 		
 		else
-			System.out.println("Error pila vacia");
-			return null;
+			return this.pila.remove(this.pila.size()-1);
 	}
 	/**metodo que retorna el ultimo elemento 
-	 * 
+	 * si la pila esta vacia salta una excepcion
 	 * @return
 	 */
-	public T peek() {
-		if(!this.isEmpty())
-			return this.pila.get(this.pila.size()-1);
-		
+	public T peek()throws Exception {
+		if(this.isEmpty())
+			throw new Exception("Error: Pila vacia");		
 		else
-			System.out.println("Error pila vacia");
-		return null;
+			return this.pila.get(this.pila.size()-1);
+
 			
 	}
+	/**
+	 * metodo que retorna todos elmentos de la pila 
+	 */
 	public String toString() {
 		return pila.toString();
+	}
+	public ArrayList<T> elementosPila() {
+		return this.pila;
 	}
 	
 	
