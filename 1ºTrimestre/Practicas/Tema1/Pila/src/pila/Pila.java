@@ -2,7 +2,7 @@ package pila;
 
 import java.util.ArrayList;
 /**
- * 
+ * LIFO, que ordenan los elementos LIFO (último en entrar, primero en salir)
  * 
  * @param <T>
  */
@@ -79,3 +79,5 @@ public class Pila<T> {
 	
 
 }
+//isempty, remove, (recupera y elimina si esta vaciA RETORNA NULL), peek (recupera pero no elimina, si esta vacio retorrna null), constante max_size ( representa el tamaño max de la cola)
+//add(T)(retorna true si se ha insertado y no hay espacio lanza una exception 
