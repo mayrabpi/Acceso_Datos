@@ -48,8 +48,11 @@ public class Main {
 			}	
 		}while(opcion!=5);
 		
+		entrada.close();
+		entrada1.close();
 
 	}
+	
 
 }
-// clase phone book // menu en main 
+
