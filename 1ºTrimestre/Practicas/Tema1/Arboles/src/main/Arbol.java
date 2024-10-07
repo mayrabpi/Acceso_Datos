@@ -88,6 +88,35 @@ public class Arbol {
 	   private int findSmallestValue(Nodo root) {
 	    return root.left == null ? root.value : findSmallestValue(root.left);
 	   }
+	   
+	   public void preorden() {
+		   preordenRecursivo(this.root);
+	   }
+	     
+	   private void preordenRecursivo(Nodo n) {
+		   if(n != null) {
+			   System.out.println(n.value);
+			   preordenRecursivo(n.left);
+			   preordenRecursivo(n.right);
+			   
+		   }
+	   }
+	   public void inorden() {
+		   inordenRecursivo(this.root);
+	   }
+	   private void inordenRecursivo(Nodo n) {
+		   if(n!=null) {
+			   System.out.println(n.value);
+		   }
+	   }
+	   
+	   public void postorden(){
+		   postordenRecursivo(this.root);
+		   
+	   }
+	   private void postordenRecursivo(Nodo n) {
+		   
+	   }
 
 
 }

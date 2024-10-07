@@ -9,9 +9,11 @@ public class Main {
 		 arbol.add(3);
 		 arbol.add(2);
 		 arbol.add(6);
+		 arbol.add(1);
 		 
 		 //arbol.buscar(5);
          System.out.println(arbol.buscar(2));
+         arbol.preorden();
 
 	}
 
