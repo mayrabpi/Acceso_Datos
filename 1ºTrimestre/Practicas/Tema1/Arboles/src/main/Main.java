@@ -14,6 +14,10 @@ public class Main {
 		 //arbol.buscar(5);
          System.out.println(arbol.buscar(2));
          arbol.preorden();
+         System.out.println();
+         arbol.postorden();
+         System.out.println();
+         arbol.inorden();
 
 	}
 
