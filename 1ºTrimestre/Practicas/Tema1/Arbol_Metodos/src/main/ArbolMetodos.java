@@ -64,14 +64,98 @@ public class ArbolMetodos {
 	 * @return
 	 */
 	private boolean arbolEstrictoRecursivo(Nodo nodo) {
-		if(nodo==null) {
+		if(nodo==null) {//si el nodo es null, es un árbol vacío, o llegamos a una hoja
 			return true;
 		}
 		if(nodo.left==null && nodo.rigth!=null||nodo.rigth==null && nodo.left!=null) {
-			 return false;
+			 return false;// si el nodo sólo tiene un hijo en tonces rotornamos false
 		}
-		return arbolEstrictoRecursivo(nodo.left)&& arbolEstrictoRecursivo(nodo.rigth);
+		return arbolEstrictoRecursivo(nodo.left)&& arbolEstrictoRecursivo(nodo.rigth);//recursivamente verificamos los hijos hizquierdos
 			
+	}
+	/**
+	 * Metodo para encontrar el valor maximo en un arbol binario de busqueda
+	 * @return
+	 */
+	public int encuentraMaximo() {
+		return maximoRecursivo(this.root);
+	}
+	/**
+	 * metodo recursivo para encontrar el valor maximo en un arbol binario de busqueda
+	 * @param nodo
+	 * @return
+	 */
+	private int maximoRecursivo(Nodo nodo) {
+		if(nodo ==null) {
+			return -1;//si arbol vacio retornamos -1
+		}
+		if(nodo.rigth==null) {//si no hay nodos a la derecha este es el valor maximo
+			return nodo.value;
+		}
+		return maximoRecursivo(nodo.rigth);//recursivamente seguimos buscando en el arbol derecho
+	}
+	/**
+	 * metodo que cuenta las hojas de un arbol
+	 * @return
+	 */
+	public int cuentaHojas() {
+		return cuentaHojasRecursivo(this.root);
+	}
+	/**
+	 * metodo recursivo que cuenta las hojas de un arbol, las hojas de un arbol son los nodos que no tienen hijos
+	 * @param nodo
+	 * @return
+	 */
+	private int cuentaHojasRecursivo(Nodo nodo) {
+		if(nodo== null) {
+			return 0;
+		}
+		if(nodo.left==null && nodo.rigth==null) {
+			return 1;//si el nodo no tiene hijos es una hoja retornamos 1 
+		}
+		return cuentaHojasRecursivo(nodo.left)+ cuentaHojasRecursivo(nodo.rigth);//contamos las hojas 
+	}
+	/**
+	 * Metodo que llama al metodo recursivo para sumar los nodos de un arbol binario
+	 * @return
+	 */
+	public int sumaNodos() {
+		return sumaNodosRecursivo(this.root);
+	}
+	/**
+	 * Metodo recursivo que suma los nodos de un arbol binario
+	 * @param nodo
+	 * @return
+	 */
+	private int sumaNodosRecursivo(Nodo nodo) {
+		if(nodo == null) {//si nodo null retornamos 0
+			return 0;
+		}
+		//suma del valor actual mas la suma de los nodos izquieros y derechos
+		return nodo.value +sumaNodosRecursivo(nodo.left)+sumaNodosRecursivo(nodo.rigth);
+	}
+	/**
+	 * Metodo que llama al metodo recursivo para sumar los nodos de valor pares de un arbol binario
+	 * @return
+	 */
+	public int SumaNodosPares() {
+		return sumaNodoParesRecursivo(this.root);
+	}
+	/**
+	 * metodo recursivo  que suma los nodos de valor par de un arbol binario
+	 * @param nodo
+	 * @return
+	 */
+	private int sumaNodoParesRecursivo(Nodo nodo) {
+		if(nodo==null) {
+			return 0;
+		}
+		if(nodo.value%2==0) {
+			return nodo.value+sumaNodoParesRecursivo(nodo.left)+sumaNodoParesRecursivo(nodo.rigth);
+			
+		}
+		return sumaNodoParesRecursivo(nodo.left)+sumaNodoParesRecursivo(nodo.rigth);
+		
 	}
 	
 

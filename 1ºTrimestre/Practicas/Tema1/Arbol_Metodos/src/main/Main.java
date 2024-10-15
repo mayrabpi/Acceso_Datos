@@ -7,16 +7,20 @@ public class Main {
 		
 		ArbolMetodos arbol = new ArbolMetodos();
 		
-		arbol.add(6);
+		arbol.add(20);
+		arbol.add(25);
+		arbol.add(7);
 		arbol.add(5);
-		arbol.add(3);
-		arbol.add(2);
-		arbol.add(4);
-		arbol.add(6);
+		arbol.add(8);
+		arbol.add(24);
+		arbol.add(26);
 		
 		
 		System.out.println(arbol.contarAltura());
 		System.out.println(arbol.arbolEstricto());
+		System.out.println(arbol.encuentraMaximo());
+		System.out.println(arbol.sumaNodos());
+		System.out.println(arbol.SumaNodosPares());
 		
 		
 	}
