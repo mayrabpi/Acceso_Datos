@@ -16,10 +16,7 @@ public class Main {
 		arbol.add(26);
 		
 		
-		System.out.println(arbol.contarAltura());
-		System.out.println(arbol.arbolEstricto());
-		System.out.println(arbol.encuentraMaximo());
-		System.out.println(arbol.sumaNodos());
+	
 		System.out.println(arbol.SumaNodosPares());
 		
 		

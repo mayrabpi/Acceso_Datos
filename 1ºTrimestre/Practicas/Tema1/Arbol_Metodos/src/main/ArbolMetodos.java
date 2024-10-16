@@ -9,7 +9,7 @@ public class ArbolMetodos {
 		
 	}
 	/**
-	 * 
+	 * Metodo que llama al metodo recursivo para añadir elementos a un arbol binario
 	 * @param valor
 	 */
 	public void add(int valor) {
@@ -139,23 +139,22 @@ public class ArbolMetodos {
 	 * @return
 	 */
 	public int SumaNodosPares() {
-		return sumaNodoParesRecursivo(this.root);
+		return sumaParesRecur(this.root);
 	}
 	/**
-	 * metodo recursivo  que suma los nodos de valor par de un arbol binario
+	 *Metodo recursivo que suma los numeros pares de un arbol binario
 	 * @param nodo
 	 * @return
 	 */
-	private int sumaNodoParesRecursivo(Nodo nodo) {
+	private int sumaParesRecur(Nodo nodo) {
 		if(nodo==null) {
 			return 0;
 		}
+		int par = nodo.value;	
 		if(nodo.value%2==0) {
-			return nodo.value+sumaNodoParesRecursivo(nodo.left)+sumaNodoParesRecursivo(nodo.rigth);
-			
+			return par+ sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 		}
-		return sumaNodoParesRecursivo(nodo.left)+sumaNodoParesRecursivo(nodo.rigth);
-		
+		return sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 	}
 	
 
