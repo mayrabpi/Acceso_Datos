@@ -18,6 +18,7 @@ public class Main {
          arbol.postorden();
          System.out.println();
          arbol.inorden();
+        
 
 	}
 
