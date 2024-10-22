@@ -150,9 +150,10 @@ public class ArbolMetodos {
 		if(nodo==null) {
 			return 0;
 		}
-		int par = nodo.value;	
+		int suma = 0;	
 		if(nodo.value%2==0) {
-			return par+ sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
+			suma=nodo.value;
+			return suma+ sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 		}
 		return sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 	}
