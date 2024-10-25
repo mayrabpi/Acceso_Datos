@@ -18,8 +18,7 @@ public class Main {
 			System.out.println("4.Listar contacto");
 			System.out.println("5.salir");
 			opcion = entrada.nextInt();
-			switch (opcion){
-			
+			switch (opcion){			
 			case 1:
 				System.out.println("Introduzca el nombre del contacto");
 				String nombre=entrada1.nextLine();
@@ -31,8 +30,7 @@ public class Main {
 				System.out.println("Ingrese el nombre del contacto a eliminar");
 				String nombre1 = entrada1.nextLine();
 				agenda.eliminaContacto(nombre1);
-				break;
-				
+				break;				
 			case 3:
 				System.out.println("Introduzca el nimbre del contacto a buscar");
 				String nombre2= entrada1.nextLine();

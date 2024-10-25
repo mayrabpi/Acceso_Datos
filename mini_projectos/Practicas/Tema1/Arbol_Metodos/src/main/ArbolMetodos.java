@@ -13,7 +13,7 @@ public class ArbolMetodos {
 	 * @param valor
 	 */
 	public void add(int valor) {
-		this.root = addRecursive(root,valor);
+		this.root = addRecursive(this.root,valor);
 	}
 	/**
 	 * metodo recursivo que añede valores al arbol
@@ -85,6 +85,7 @@ public class ArbolMetodos {
 	 * @param nodo
 	 * @return
 	 */
+	
 	private int maximoRecursivo(Nodo nodo) {
 		if(nodo ==null) {
 			return -1;//si arbol vacio retornamos -1
@@ -157,6 +158,25 @@ public class ArbolMetodos {
 		}
 		return sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 	}
+	public int valorMaximo() {
+		if(this.root == null) {
+			return -1;
+		}
+		
+		return valorMaximoRecur(this.root);
+		
+	}
 	
+	private int valorMaximoRecur(Nodo node) {
+		if(node==null) {
+			return -1;
+			
+		}
+		int max_value = node.value;
+		int leftMax = valorMaximoRecur(node.left);
+		int rightMax= valorMaximoRecur(node.rigth);
+		
+		return Math.max(max_value, Math.max(leftMax, rightMax));
+	}
 
 }

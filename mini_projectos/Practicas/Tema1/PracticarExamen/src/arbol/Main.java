@@ -1,4 +1,4 @@
-package main;
+package arbol;
 
 public class Main {
 
@@ -13,11 +13,12 @@ public class Main {
 		arbol.add(24);
 		arbol.add(26);
 		
-		//arbol.preorden();
-		arbol.inorden();
-	
-		System.out.println(arbol.buscar(85));
-	
+
+		
+
+
+	arbol.buscar(24);
+		
 
 	}
 
