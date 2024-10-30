@@ -22,6 +22,9 @@ public class Main {
 		a2.add(10);
 		a2.add(30);
 		System.out.println(a1.iguales(a2));
+		a1.preorden();
+		a2.preorden();
+		
 		
 		
 	

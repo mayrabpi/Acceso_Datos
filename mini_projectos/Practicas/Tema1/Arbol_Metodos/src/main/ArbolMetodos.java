@@ -70,7 +70,7 @@ public class ArbolMetodos {
 		if(nodo.left==null && nodo.rigth!=null||nodo.rigth==null && nodo.left!=null) {
 			 return false;// si el nodo sólo tiene un hijo en tonces rotornamos false
 		}
-		return arbolEstrictoRecursivo(nodo.left)&& arbolEstrictoRecursivo(nodo.rigth);//recursivamente verificamos los hijos hizquierdos
+		return arbolEstrictoRecursivo(nodo.left)&& arbolEstrictoRecursivo(nodo.rigth);//recursivamente verificamos los hijos 
 			
 	}
 	/**
@@ -151,10 +151,10 @@ public class ArbolMetodos {
 		if(nodo==null) {
 			return 0;
 		}
-		int suma = 0;	
+		int par = 0;	
 		if(nodo.value%2==0) {
-			suma=nodo.value;
-			return suma+ sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
+			par=nodo.value;
+			return par+ sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 		}
 		return sumaParesRecur(nodo.left)+ sumaParesRecur(nodo.rigth);
 	}
@@ -177,6 +177,77 @@ public class ArbolMetodos {
 		int rightMax= valorMaximoRecur(node.rigth);
 		
 		return Math.max(max_value, Math.max(leftMax, rightMax));
+	}
+	private boolean buscarR(Nodo current, int valor) {
+		if(current==null) {
+			return false;
+		}
+		if(current.value== valor) {
+			return true;
+		}
+		return valor<current.value?buscarR(current.left,valor):buscarR(current.rigth, valor);
+	}
+	public boolean buscar(int valor) {
+		return buscarR(this.root,valor);
+	}
+	
+	private int sumaimparecur(Nodo n) {
+		if(n==null) {
+			return 0;
+		}
+		int suma =0;
+		if (n.value%2!=0) {
+			suma=n.value;
+			return suma+sumaimparecur(n.left)+sumaimparecur(n.rigth);
+		
+		}
+		return sumaimparecur(n.left)+sumaimparecur(n.rigth);
+			
+	}
+	public int sumaimpar() {
+		return sumaimparecur(this.root);
+	}
+	private String buscarladoR(Nodo current, int valor) {
+		if(current==null) {
+			return "No encontrado";
+		}
+		if(current.value==valor) {
+			return " ";
+		}
+		String izquierda = buscarladoR(current.left,valor);
+		if(!izquierda.equalsIgnoreCase("No encontrado")) {
+			return "izquierda -> " + izquierda;
+		}
+		String derecha = buscarladoR(current.rigth,valor);
+		if(!derecha.equalsIgnoreCase("No encontrado")) {
+			return "derecha ->" + derecha;
+		}
+		return "No encontrado";
+	}
+	public String buscaLado(int valor) {
+		if(this.root!=null&& this.root.value==valor) {
+			return "Raiz";
+		}
+		return buscarladoR(this.root,valor );
+	}
+	public int suma(Nodo n, int nivel) {
+		if(n==null) {
+		return 0;
+		}
+		if(nivel==0) {
+			return n.value;
+		}
+		return suma(n.left,nivel-1)+suma(n.rigth,nivel-1);
+	}
+	
+	private int nodoNivel(Nodo n, int nivel) {
+		if(n==null) {
+			return 0;
+		}
+		if(nivel==0) {
+			return 1;
+		}
+		return nodoNivel(n.left,nivel-1)+nodoNivel(n.rigth,nivel-1);
 	}
 
 }

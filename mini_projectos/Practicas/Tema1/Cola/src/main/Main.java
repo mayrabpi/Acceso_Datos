@@ -10,9 +10,11 @@ public class Main {
 		numero.add(1);
 		numero.add(5);
 		System.out.println(numero.elementCola());
-	    numero.remove();
+	 
 		
 		
+		System.out.println(numero.peek());
+		numero.remove();
 		System.out.println(numero.elementCola());
 	
 

@@ -1,7 +1,7 @@
 package main;
 
 public class Arbol {
-	private Nodo root;
+	public Nodo root;
 	
 	public Arbol() {
 		
@@ -35,6 +35,18 @@ public class Arbol {
 			return false;
 		}
 		return current.valor== n.valor && sonIguales(current.left, n.left)&& sonIguales(current.rigth,n.rigth);
+	}
+	
+	private void preordenR(Nodo n) {
+		if(n==null) {
+			return;
+		}
+		System.out.println("valor: "+ n.valor);
+		preordenR(n.left);
+		preordenR(n.rigth);
+	}
+	public void preorden() {
+		preordenR(this.root);
 	}
 	
 

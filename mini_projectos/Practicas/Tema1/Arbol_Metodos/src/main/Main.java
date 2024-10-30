@@ -23,6 +23,8 @@ public class Main {
 		System.out.println(arbol.SumaNodosPares());
 		System.out.println(arbol.cuentaHojas());
 		System.out.println(arbol.valorMaximo());
+		System.out.println(arbol.buscaLado(24));
+		arbol.buscaLado(25);
 		
 		
 		

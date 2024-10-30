@@ -18,5 +18,30 @@ public class OtroArbol {
 		}
 		return current;
 	}
+	
+	private void preordenR(Nodo n) {
+		if(n==null) {
+			return;
+		}
+		System.out.println("valor: "+ n.valor);
+		preordenR(n.left);
+		preordenR(n.rigth);
+	}
+	public void preorden() {
+		preordenR(this.root);
+	}
+	//metodo que comprueba si dos arboles son iguales 
+	private boolean igurecu(Nodo current, Nodo n) {
+		if(current==null && n==null) {
+			return true;
+		}
+		if(current==null || n== null) {
+			return false;
+		}
+		return current.valor==n.valor&&igurecu(current.left,n.left)&&igurecu(current.rigth,n.rigth);
+	}
+	public boolean iguales(Arbol otro) {
+		return igurecu(this.root, otro.root);
+	}
 
 }
