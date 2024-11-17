@@ -10,7 +10,7 @@ import java.util.List;
 
 public class EjemploPath {
     public static void main(String[] args) {
-    Path rutaArchivo = Paths.get("example.txt");
+    Path rutaArchivo = Path.of("example.txt");
 
     try {
             // Crear el archivo si no existe
