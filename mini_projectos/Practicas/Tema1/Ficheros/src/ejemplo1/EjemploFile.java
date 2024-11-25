@@ -8,7 +8,7 @@ import java.io.IOException;
 public class EjemploFile {
     public static void main(String[] args) {
         // Nombre del archivo
-        String nombreArchivo = "./src/ejemplo.txt";
+        String nombreArchivo = "./src/ejemplo1.txt";
 
         // Crear un objeto File
         File archivo = new File(nombreArchivo);
